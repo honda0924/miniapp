@@ -1,0 +1,96 @@
+
+-# <body>
+-#   <nav class="light-blue">
+-#     <div class="nav-wrapper">
+-#       <a href="#" class="brand-logo">miniApp</a>
+-#       <ul id="nav-mobile" class="right hide-on-med-and-down">
+-#         <li><a href="sass.html">Sign_in</a></li>
+-#         <li><a href="badges.html">Sign_out</a></li>
+-#         <li><a href="collapsible.html">New</a></li>
+-#       </ul>
+-#     </div>
+-#   </nav>
+%nav.light-blue
+  .nav-wrapper
+    %a.brand-logo{:href => "#"} miniApp
+    %ul#nav-mobile.right.hide-on-med-and-down
+      %li
+        %a{:href => "#"} Sign_in
+      %li
+        %a{:href => "#"} Sign_out
+      %li
+        %a{:href => "#"} New
+
+-# <h1>Hello World</h1>
+-# <!-- card -->
+-# <div class="row">
+-#   <div class="col s12 m6 ">
+-#     <div class="card teal">
+-#       <div class="card-content white-text">
+-#         <span class="card-title">Card Title</span>
+-#         <p>I am a very simple card. I am good at containing small bits of information.
+-#         I am convenient because I require little markup to use effectively.</p>
+-#       </div>
+-#       <div class="card-action">
+-#         <a href="#">This is a link</a>
+-#         <a href="#">This is a link</a>
+-#       </div>
+-#     </div>
+-#   </div>
+-# </div>
+.row
+  .col.s12.m6
+    .card.teal
+      %p
+        I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.
+      .card-action
+        %a{:href => "#"} Show
+        %a{:href => "#"} Edit
+        %a{:href => "#"} Delete
+-# <!-- form -->
+-# <div class="row">
+-#   <form class="col s12">
+-#     <div class="row">
+-#       <div class="input-field col s6">
+-#         <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+-#         <label for="first_name">First Name</label>
+-#       </div>
+-#       <div class="input-field col s6">
+-#         <input id="last_name" type="text" class="validate">
+-#         <label for="last_name">Last Name</label>
+-#       </div>
+-#     </div>
+-#     <div class="row">
+-#       <div class="input-field col s12">
+-#         <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+-#         <label for="disabled">Disabled</label>
+-#       </div>
+-#     </div>
+-#     <div class="row">
+-#       <div class="input-field col s12">
+-#         <input id="password" type="password" class="validate">
+-#         <label for="password">Password</label>
+-#       </div>
+-#     </div>
+-#     <div class="row">
+-#       <div class="input-field col s12">
+-#         <input id="email" type="email" class="validate">
+-#         <label for="email">Email</label>
+-#       </div>
+-#     </div>
+-#     <div class="row">
+-#       <div class="col s12">
+-#         This is an inline input field:
+-#         <div class="input-field inline">
+-#           <input id="email" type="email" class="validate">
+-#           <label for="email" data-error="wrong" data-success="right">Email</label>
+-#         </div>
+-#       </div>
+-#     </div>
+-#   </form>
+-# </div>
+
+-# <script type="text/javascript" src="./app.js"></script>
+-# </body>
+-# </html>
