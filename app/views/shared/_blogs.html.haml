@@ -1,0 +1,13 @@
+.row
+  .col.s12.m6
+    - @blogs.each do |blog|
+      .card.teal
+        %p
+          = blog.content
+        .card-action
+          Written By:
+          =link_to blog.user.name, "users/#{blog.user.id}"
+        -if user_signed_in? &&current_user.id == blog.user.id
+          .card-action
+            = link_to 'Edit', edit_blog_path(blog.id)
+            = link_to 'Delete', "blogs/#{blog.id}",method: :delete
