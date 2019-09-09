@@ -1,0 +1,18 @@
+%nav.light-blue
+  .nav-wrapper
+    .brand-logo
+      = link_to 'miniApp', root_path
+
+    %ul#nav-mobile.right.hide-on-med-and-down
+      - if user_signed_in?
+        %li
+          = link_to 'My_Page', "users/#{current_user.id}"
+        %li
+          = link_to 'Sign_out', destroy_user_session_path, method: :delete
+        %li
+          = link_to 'New',new_blog_path
+      - else
+        %li
+          = link_to 'Log_in',new_user_session_path
+        %li
+          = link_to 'Sign_up',new_user_registration_path
