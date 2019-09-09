@@ -6,6 +6,8 @@
     %ul#nav-mobile.right.hide-on-med-and-down
       - if user_signed_in?
         %li
+          = link_to 'My_Page', "users/#{current_user.id}"
+        %li
           = link_to 'Sign_out', destroy_user_session_path, method: :delete
         %li
           = link_to 'New',new_blog_path
@@ -44,4 +46,8 @@
           = blog.content
         .card-action
           Written By:
-          =link_to blog.user.name,root_path
+          =link_to blog.user.name, "users/#{blog.user.id}"
+        -if user_signed_in? &&current_user.id == blog.user.id
+          .card-action
+            = link_to 'Edit', edit_blog_path(blog.id)
+            = link_to 'Delete', "blogs/#{blog.id}",method: :delete
