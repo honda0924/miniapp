@@ -1,5 +1,5 @@
 .row
-  .col.s12.m6
+  .col.s8.offset-s2
     - @blogs.each do |blog|
       .card.teal
         %p
@@ -7,6 +7,7 @@
         .card-action
           Written By:
           =link_to blog.user.name, "users/#{blog.user.id}"
+          =blog.created_at.strftime("%Y-%m-%d %H:%M")
         -if user_signed_in? &&current_user.id == blog.user.id
           .card-action
             = link_to 'Edit', edit_blog_path(blog.id)
