@@ -8,6 +8,12 @@
           Written By:
           =link_to blog.user.name, "users/#{blog.user.id}"
           =blog.created_at.strftime("%Y-%m-%d %H:%M")
+          -if user_signed_in?
+            -if current_user.already_liked?(blog)
+              いいね！しました
+              -# =link_to 'いいね！を取り消す',like_path(@like.id), method: :DELETE
+            -else
+              =link_to 'いいね！',likes_path(blog.id), method: :POST
         -if user_signed_in? &&current_user.id == blog.user.id
           .card-action
             = link_to 'Edit', edit_blog_path(blog.id)
