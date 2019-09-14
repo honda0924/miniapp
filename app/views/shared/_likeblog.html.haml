@@ -4,11 +4,14 @@
       .card.teal
         %p
           = blog.content
-        .card-action
-          Written By:
-          =link_to blog.user.name, user_path(blog.user.id)
-          = blog.liked_users.count.to_s + "件のいいね"
-          =blog.created_at.strftime("%Y-%m-%d %H:%M")
+        .card-action.blog__info
+          .card-action__element
+            Written By:
+            =link_to blog.user.name, user_path(blog.user.id)
+          .card-action__element
+            = blog.liked_users.count.to_s + "件のいいね"
+          .card-action__element
+            =blog.created_at.to_s(:datetime)
         -if user_signed_in? &&current_user.id == blog.user.id
           .card-action
             = link_to 'Edit', edit_blog_path(blog.id)

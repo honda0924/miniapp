@@ -2,5 +2,7 @@
   .col.s12
     = form_for @blog do |f|
       .row
-        = f.text_area :content ,class: "input-field col s8 offset-s2",placeholder: 'content', size: "100*50"
+        .input-field.s12
+          = f.label 'Content',for: 'contentsarea',class: "col.offset-s1"
+          = f.text_area :content ,id: 'contentsarea', class: "materialize-textarea col s8 offset-s2"
       =f.submit 'Submit', class: 'waves-effect waves-light btn col s2 offset-s5'

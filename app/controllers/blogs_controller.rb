@@ -2,7 +2,6 @@ class BlogsController < ApplicationController
   def index
     @blogs=Blog.all.order("created_at DESC")
     @likes = Like.new
-    @like = Like.find_by(blog_id: params[:blog_id],user_id: current_user.id)
   end
   def new
     @blog=Blog.new
