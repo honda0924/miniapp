@@ -1,13 +1,17 @@
 = render 'shared/nav'
 %h4
   = @name
-%p
-  Posts List
-= render 'shared/blog'
+.tab_wrap
+  .tab_area
+    %label.tab_label.active#posts_label Posts
+    %label.tab_label#likes_label Likes
+  .panel_area
+    .tab_panel.show#posts_panel
+      = render 'shared/blog'
+    .tab_panel#likes_panel
+      = render 'shared/likeblog'
 
-%p
-  Likes
-  = render 'shared/likeblog'
+
 
 
 -# <div class="contents row">
