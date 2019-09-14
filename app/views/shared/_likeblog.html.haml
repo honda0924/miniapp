@@ -7,6 +7,7 @@
         .card-action
           Written By:
           =link_to blog.user.name, user_path(blog.user.id)
+          = blog.liked_users.count.to_s + "件のいいね"
           =blog.created_at.strftime("%Y-%m-%d %H:%M")
         -if user_signed_in? &&current_user.id == blog.user.id
           .card-action
