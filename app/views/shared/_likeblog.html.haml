@@ -1,6 +1,6 @@
 .row
   .col.s8.offset-s2
-    - @blogs.each do |blog|
+    - @user.liked_blogs.each do |blog|
       .card.teal
         %p
           = blog.content
@@ -8,12 +8,6 @@
           Written By:
           =link_to blog.user.name, user_path(blog.user.id)
           = blog.liked_users.count.to_s + "件のいいね"
-          -if user_signed_in?
-            -if current_user.already_liked?(blog)
-              いいね！しました
-              -# =link_to 'いいね！を取り消す',like_path(@like.id), method: :DELETE
-            -else
-              =link_to 'いいね！',blog_likes_path(blog.id), method: :POST
           =blog.created_at.strftime("%Y-%m-%d %H:%M")
         -if user_signed_in? &&current_user.id == blog.user.id
           .card-action
