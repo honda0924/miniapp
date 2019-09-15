@@ -15,4 +15,4 @@
         -if user_signed_in? &&current_user.id == blog.user.id
           .card-action
             = link_to 'Edit', edit_blog_path(blog.id)
-            = link_to 'Delete', "blogs/#{blog.id}",method: :delete
+            = link_to 'Delete', blog_path(blog.id),method: :delete
