@@ -9,7 +9,7 @@
             Written By:
             =link_to blog.user.name, user_path(blog.user.id)
           .card-action__element
-            = blog.liked_users.count.to_s + "件のいいね"
+            = link_to blog.liked_users.count.to_s + "件のいいね", blog_path(blog.id)
           .card-action__element
             -if user_signed_in?
               -if current_user.already_liked?(blog)

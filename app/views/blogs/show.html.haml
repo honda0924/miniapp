@@ -1,0 +1,25 @@
+= render 'shared/nav'
+.row
+  .col.s8.offset-s2
+    .card.teal
+      %p
+        = @blog.content
+      .card-action.blog__info
+        .card-action__element
+          Written By:
+          =link_to @blog.user.name, user_path(@blog.user.id)
+        .card-action__element
+          = link_to @likeusers.count.to_s + "件のいいね", blog_path(@blog.id)
+        .card-action__element
+          -if user_signed_in?
+            -if current_user.already_liked?(@blog)
+              いいね！しました
+            -else
+              =link_to 'いいね！',blog_likes_path(@blog.id), method: :POST
+%h4
+  いいね！したユーザー一覧
+  .row
+    - @likeusers.each do |likeuser|
+      .col.s6.offset-s3
+        .card.blue.lighten-5.center-align
+          =link_to likeuser.name,user_path(likeuser.id)
