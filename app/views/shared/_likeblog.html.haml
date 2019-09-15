@@ -1,6 +1,6 @@
 .row
   .col.s8.offset-s2
-    - @user.liked_blogs.each do |blog|
+    - @likeblogs.each do |blog|
       .card.teal
         %p
           = blog.content
